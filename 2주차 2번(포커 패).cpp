@@ -9,6 +9,7 @@
 #define get_suit(x) ((x) % 10)
 using namespace std;
 
+//카드를 수치화 해서 비교하기 위한 변환 
 int encode_card(char *input)
 {
 	int result;
@@ -31,6 +32,7 @@ int encode_card(char *input)
 	return result;
 }
 
+//카드를 크기별로 정렬한뒤에 카드의 패가 무엇인지 결정하는 함수. 정렬하는 이유는 같은 패인경우 비교를 쉽게 하기 위함
 long get_hand_value(int hand[5])
 {
 	int i, j, max, temp;
@@ -52,6 +54,7 @@ long get_hand_value(int hand[5])
 		suit[i] = get_suit(hand[i]);
 	}
 
+	//카드가 오름차순으로 정렬되어 있다는것을 명심할 것
 	//스트레이트 플러쉬
 	if (value[1] + 1 == value[0] && suit[1] == suit[0]
 		&& value[2] + 2 == value[0] && suit[2] == suit[0]
