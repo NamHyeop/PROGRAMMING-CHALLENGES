@@ -5,7 +5,7 @@ using namespace std;
 int main(int argc, char * argv[])
 {
 	int Testcase;
-	int check[10000];
+	int check[3650];
 	cin >> Testcase;
 
 	for (int i = 0; i < Testcase; i++)
