@@ -55,7 +55,6 @@ int main(int argc, char *argv[])
 				for (int i = 0; i < 80; i++)
 				cout << cryp[i] <<" ";
 				cout << endl;
-
 				for (int i = 0; i < 80; i++)
 				cout << crypPos[i]<<" ";
 				cout << endl;
@@ -67,8 +66,8 @@ int main(int argc, char *argv[])
 					thatnum = num;
 
 					string checkSt = tmp;
-				//	sort(checkSt.begin(), checkSt.end());
-				//	cout << checkSt << endl;
+					//	sort(checkSt.begin(), checkSt.end());
+					//	cout << checkSt << endl;
 					for (int i = 97; i <= 122; i++)
 					{
 						for (int j = 0; j < checkSt.size(); j++)
@@ -112,19 +111,19 @@ int main(int argc, char *argv[])
 
 		if (input.empty())
 		{
-			cout << "No solution" << endl;
+			cout << "No solution." << endl;
 			if (i != Testcase - 1)
 				cout << endl;
 		}
 		else{
 			for (int j = 0; j < input.size(); j++)
 			{
-				if (input[j] == crypTarget)
+				if (input[j] == crypTarget && j == thatnum)
 					ret.push_back(input[j]);
 				else//여기서 플레그를 활용한 no solution 삽입해야할듯
 				{
 					if (flag == 0 && allalpha != 26)
-						ret.push_back("No solution");
+						ret.push_back("No solution.");
 					else
 					{
 						string partret;
@@ -151,7 +150,7 @@ int main(int argc, char *argv[])
 
 			for (int k = 0; k < ret.size(); k++)
 			{
-				if (ret[k] == "No solution")
+				if (ret[k] == "No solution.")
 				{
 					cout << ret[k] << endl;
 					break;
@@ -168,11 +167,9 @@ int main(int argc, char *argv[])
 }
 /*
 2
-
 vtz ud xnm xugm itr pyy jttk gmv xt otgm xt xnm puk ti xnm fprxq
 xnm ceuob lrtzv ita hegfd tsmr xnm ypwq ktj
 frtjrpgguvj otvxmdxd prm iev prmvx xnmq
-
 vtz ud xnm xugm itr pyy jttk gmv xt otgm xt xnm puk ti xnm fprxq
 xnm ceuob lrtzv ita hegfd tsmr xnm ypwq ktj
 frtjrpgguvj otvxmdxd prm iev prmvx xnmq
