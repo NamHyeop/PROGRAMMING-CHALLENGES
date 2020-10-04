@@ -49,13 +49,7 @@ int main(int argc, char *argv[])
 	
 	while (cin >> st_word >> fi_word)
 	{
-
-	//	if (st_word.size() == 0 || fi_word.size() == 0)
-	//		break;
-
-		vector<int> path;
 		vector<int> ret;
-		vector<int> log(strarr.size(), 0);
 		int start = -1;
 		int end = -1;
 		//시작 지점 끝 지점 설정
@@ -70,10 +64,6 @@ int main(int argc, char *argv[])
 		if (start == -1 || end == -1)
 			continue;
 
-		path.push_back(start);
-		log[start] = 1;
-
-     //탐색 시작
 		vector<int> tmplog(strarr.size(), 0);
 		deque<pair<int, vector<int>>> dq;
 		dq.push_back({ start, vector<int>(1, start) }); //
@@ -88,7 +78,7 @@ int main(int argc, char *argv[])
 				break;
 			for (int i = 0; i < strarr.size(); i++)
 			{
-				if (relationDB[road.first][i] && !tmplog[i])
+				if (relationDB[road.first][i] && !tmplog[i])//관계가 존재하며 아직 출력된적이 없는가를 확인
 				{
 					vector<int> tmpPath(road.second);
 					tmplog[i] = true;
@@ -113,8 +103,5 @@ int main(int argc, char *argv[])
 		}
 
 		cout << '\n';
-		//cin.get();
 	}
 }
-
-
